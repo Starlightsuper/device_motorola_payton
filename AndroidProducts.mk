@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/styx_payton.mk
+    $(LOCAL_DIR)/aosp_payton.mk
 
 COMMON_LUNCH_CHOICES := \
-    styx_payton-user \
-    styx_payton-userdebug \
-    styx_payton-eng
+    aosp_payton-user \
+    aosp_payton-userdebug \
+    aosp_payton-eng

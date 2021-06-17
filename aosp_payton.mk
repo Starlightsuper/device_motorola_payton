@@ -16,14 +16,15 @@
 
 # Inherit some common StyxOS stuff.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, vendor/styx/config/common.mk)
-
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk)
 
 # Device
 $(call inherit-product, device/motorola/payton/device.mk)
+
+# Inherit from aosp vendor
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # A/B updater
 AB_OTA_UPDATER := true
@@ -65,7 +66,7 @@ endif
 
 # Device identifiers
 PRODUCT_DEVICE := payton
-PRODUCT_NAME := styx_payton
+PRODUCT_NAME := aosp_payton
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := Moto X4
 PRODUCT_MANUFACTURER := Motorola
@@ -76,6 +77,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
         PRIVATE_BUILD_DESC="redfin-user 11 RQ2A.210505.003 7255357 release-keys"
 
 BUILD_FINGERPRINT := google/redfin/redfin:11/RQ2A.210505.003/7255357:user/release-keys
-
-# StyxOS Variant
-STYX_BUILD_VARIANT := OFFICIAL
